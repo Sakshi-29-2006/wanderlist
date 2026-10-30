@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WanderList - Save destinations, plan adventures and create your personal travel bucket list.">
+
+    <title>WanderList | Your Travel Journal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="brand">
+                <span class="brand-symbol"><i class="fa-solid fa-location-dot"></i></span>
+                <span>Wander<span>List.</span></span>
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#destinations" class="nav-link">My Destinations</a>
+                <a href="#travel-stats" class="nav-link">Overview</a>
+
+                <button class="nav-add-btn" id="navAddBtn">
+                    <i class="fa-solid fa-plus"></i> Add Destination
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero-section" id="home">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-tag">
+                        <span class="tag-dot"></span>
+                        YOUR PERSONAL TRAVEL JOURNAL
+                    </div>
+
+                    <h1>
+                        The world is your
+                        <span>next story.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        From quiet mountain escapes to colourful city streets,
+                        keep every place you've dreamed of visiting in one
+                        beautiful collection.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <button class="hero-primary-btn" id="heroAddBtn">
+                            Start your journey
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                        <a href="#destinations" class="hero-secondary-link">
+                            Explore destinations
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+
+                    <div class="hero-footnote">
+                        <i class="fa-regular fa-compass"></i>
+                        <span>Dream it. Save it. Make it happen.</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-photo-main">
+                        <img
+                            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85"
+                            alt="Majestic mountain destination"
+                            onerror="this.onerror=null;this.src='https://placehold.co/800x1000/9a98b5/ffffff?text=Explore+the+World'"
+                        >
+
+                        <div class="hero-photo-shade"></div>
+
+                        <div class="hero-photo-caption">
+                            <span>THE WORLD IS WAITING</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-floating-card">
+                        <div class="floating-card-icon">
+                            <i class="fa-regular fa-paper-plane"></i>
+                        </div>
+
+                        <div>
+                            <strong>Adventure awaits</strong>
+                            <small>Your next chapter begins here.</small>
+                        </div>
+                    </div>
+
+                    <div class="hero-orbit"></div>
+                    <div class="hero-small-dot"></div>
+                </div>
+            </div>
+
+            <div class="hero-bottom-label">
+                <span>01</span>
+                <span class="hero-bottom-line"></span>
+                <span>COLLECT YOUR DREAM DESTINATIONS</span>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats-section" id="travel-stats">
+            <div class="stats-container">
+                <div class="stats-heading">
+                    <div>
+                        <span class="section-kicker">A LITTLE LOOK AROUND</span>
+                        <h2>Your travel <span>overview.</span></h2>
+                    </div>
+
+                    <p>Every saved destination brings you one step closer to an adventure.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <article class="stat-card stat-purple">
+                        <div class="stat-top">
+                            <span>ALL DESTINATIONS</span>
+                            <i class="fa-solid fa-earth-asia"></i>
+                        </div>
+                        <h3 id="totalDestinations">0</h3>
+                        <p>Places in your collection</p>
+                    </article>
+
+                    <article class="stat-card stat-amethyst">
+                        <div class="stat-top">
+                            <span>WISHLIST</span>
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                        <h3 id="wishlistCount">0</h3>
+                        <p>Places to dream about</p>
+                    </article>
+
+                    <article class="stat-card stat-blue">
+                        <div class="stat-top">
+                            <span>PLANNED</span>
+                            <i class="fa-solid fa-route"></i>
+                        </div>
+                        <h3 id="plannedCount">0</h3>
+                        <p>Adventures in the making</p>
+                    </article>
+
+                    <article class="stat-card stat-green">
+                        <div class="stat-top">
+                            <span>VISITED</span>
+                            <i class="fa-solid fa-stamp"></i>
+                        </div>
+                        <h3 id="visitedCount">0</h3>
+                        <p>Memories already made</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destination Collection -->
+        <section class="destinations-section" id="destinations">
+            <div class="destinations-container">
+                <div class="collection-heading">
+                    <div>
+                        <span class="section-kicker">YOUR LITTLE CORNER OF THE WORLD</span>
+                        <h2>Places on my <span>mind.</span></h2>
+                        <p>Browse your saved destinations and decide where life takes you next.</p>
+                    </div>
+
+                    <button class="collection-add-btn" id="sectionAddBtn">
+                        <i class="fa-solid fa-plus"></i>
+                        Add a destination
+                    </button>
+                </div>
+
+                <!-- Search and Filters -->
+                <div class="filter-panel">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="search"
+                            id="searchInput"
+                            placeholder="Find a destination..."
+                            aria-label="Search destinations"
+                        >
+
+                        <button id="clearSearchBtn" aria-label="Clear search">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <div class="filter-divider"></div>
+
+                    <div class="filter-selects">
+                        <select id="categoryFilter" aria-label="Filter by category">
+                            <option value="">All Categories</option>
+                            <option value="Beach">Beach</option>
+                            <option value="Mountain">Mountain</option>
+                            <option value="City">City</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Nature">Nature</option>
+                            <option value="Historical">Historical</option>
+                            <option value="Other">Other</option>
+                        </select>
+
+                        <select id="statusFilter" aria-label="Filter by status">
+                            <option value="">All Status</option>
+                            <option value="Wishlist">Wishlist</option>
+                            <option value="Planned">Planned</option>
+                            <option value="Visited">Visited</option>
+                        </select>
+
+                        <select id="countryFilter" aria-label="Filter by country">
+                            <option value="">All Countries</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="results-row">
+                    <p id="resultsText">Showing all destinations</p>
+
+                    <button id="resetFiltersBtn" class="reset-btn">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Reset filters
+                    </button>
+                </div>
+
+                <!-- Destination Cards -->
+                <div class="destination-grid" id="destinationGrid"></div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" hidden>
+                    <div class="empty-illustration">
+                        <i class="fa-regular fa-compass"></i>
+                    </div>
+
+                    <span class="section-kicker">A BLANK TRAVEL JOURNAL</span>
+                    <h3>Your next story starts with a place.</h3>
+                    <p>You haven't saved any destinations yet. Add a place you've always wanted to explore.</p>
+
+                    <button class="collection-add-btn" id="emptyAddBtn">
+                        <i class="fa-solid fa-plus"></i>
+                        Add your first destination
+                    </button>
+                </div>
+
+                <!-- No Search Results -->
+                <div class="no-results" id="noResults" hidden>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h3>No matching destinations</h3>
+                    <p>Try another search term or change your filters.</p>
+
+                    <button class="collection-add-btn" id="noResultsResetBtn">
+                        Clear filters
+                    </button>
+                </div>
+
+                <!-- Loading -->
+                <div class="loading-state" id="loadingState" hidden>
+                    <div class="loader"></div>
+                    <p>Collecting your travel dreams...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing Banner -->
+        <section class="closing-section">
+            <div class="closing-inner">
+                <span class="closing-icon">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </span>
+
+                <span class="section-kicker">THERE IS SO MUCH OUT THERE</span>
+
+                <h2>Make room for <span>more memories.</span></h2>
+
+                <p>The world is too beautiful to stay in one place.</p>
+
+                <a href="#home" class="closing-link">
+                    Back to the top
+                    <i class="fa-solid fa-arrow-up"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add/Edit Modal -->
+    <div class="modal-overlay" id="destinationModal" aria-hidden="true">
+        <div class="destination-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header">
+                <div>
+                    <span class="section-kicker">LET'S ADD TO YOUR STORY</span>
+                    <h2 id="modalTitle">Add a destination</h2>
+                    <p>Tell us a little about the place.</p>
+                </div>
+
+                <button class="modal-close-btn" id="closeModalBtn" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form id="destinationForm" novalidate>
+                <input type="hidden" id="destinationId">
+
+                <div class="form-feedback-summary" id="formFeedbackSummary" role="alert" aria-live="assertive" hidden>
+                    <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
+                    <span id="formFeedbackMessage">Please review the highlighted fields.</span>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="destinationName">Destination name <span>*</span></label>
+                        <input type="text" id="destinationName" placeholder="e.g. Santorini" minlength="2" maxlength="60" autocomplete="off" aria-describedby="destinationNameHint destinationNameError" required>
+                        <small class="field-hint" id="destinationNameHint">Enter a place name between 2 and 60 characters.</small>
+                        <span class="field-error" id="destinationNameError"></span>
+                        <span class="field-success" id="destinationNameSuccess"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country <span>*</span></label>
+                        <input type="text" id="country" placeholder="e.g. Greece" maxlength="60" autocomplete="off" aria-describedby="countryHint countryError" required>
+                        <small class="field-hint" id="countryHint">Enter the country where this place is located.</small>
+                        <span class="field-error" id="countryError"></span>
+                        <span class="field-success" id="countrySuccess"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category <span>*</span></label>
+                        <select id="category" aria-describedby="categoryError" required>
+                            <option value="">Select category</option>
+                            <option value="Beach">Beach</option>
+                            <option value="Mountain">Mountain</option>
+                            <option value="City">City</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Nature">Nature</option>
+                            <option value="Historical">Historical</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="field-error" id="categoryError"></span>
+                        <span class="field-success" id="categorySuccess"></span>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="description">Description <span>*</span></label>
+                        <textarea id="description" rows="3" maxlength="500" placeholder="What makes this destination special?" aria-describedby="descriptionHint descriptionError" required></textarea>
+                        <small class="field-hint" id="descriptionHint">Write at least 10 characters. Maximum 500 characters.</small>
+                        <span class="field-counter" id="descriptionCounter">0 / 500</span>
+                        <span class="field-error" id="descriptionError"></span>
+                        <span class="field-success" id="descriptionSuccess"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estimatedBudget">Estimated budget (₹) <span>*</span></label>
+                        <input type="number" id="estimatedBudget" min="0" step="1" max="1000000000" inputmode="numeric" placeholder="25000" aria-describedby="estimatedBudgetHint estimatedBudgetError" required>
+                        <small class="field-hint" id="estimatedBudgetHint">Enter your estimated total budget in Indian rupees. Zero is allowed.</small>
+                        <span class="field-error" id="estimatedBudgetError"></span>
+                        <span class="field-success" id="estimatedBudgetSuccess"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="travelDate">Travel date</label>
+                        <input type="date" id="travelDate" aria-describedby="travelDateHint travelDateError">
+                        <small class="field-hint" id="travelDateHint">Optional. Choose a future date for Wishlist or Planned trips, and a past date for Visited trips.</small>
+                        <span class="field-error" id="travelDateError"></span>
+                        <span class="field-success" id="travelDateSuccess"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Travel status</label>
+                        <select id="status" aria-describedby="statusError">
+                            <option value="Wishlist">Wishlist</option>
+                            <option value="Planned">Planned</option>
+                            <option value="Visited">Visited</option>
+                        </select>
+                        <span class="field-error" id="statusError"></span>
+                        <span class="field-success" id="statusSuccess"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imageUrl">Image URL</label>
+                        <input type="url" id="imageUrl" placeholder="https://example.com/image.jpg" maxlength="2048" autocomplete="url" aria-describedby="imageUrlHint imageUrlError">
+                        <small class="field-hint" id="imageUrlHint">Optional. Paste a publicly accessible image link beginning with http:// or https://.</small>
+                        <span class="field-error" id="imageUrlError"></span>
+                        <span class="field-success" id="imageUrlSuccess"></span>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="cancel-btn" id="cancelModalBtn">Cancel</button>
+
+                    <button type="submit" class="save-btn" id="saveDestinationBtn">
+                        <i class="fa-solid fa-plus"></i>
+                        Save destination
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <span class="toast-icon" id="toastIcon">
+            <i class="fa-solid fa-check"></i>
+        </span>
+
+        <span id="toastMessage">Destination added successfully!</span>
+
+        <button id="closeToastBtn" aria-label="Close notification">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <a href="#home" class="brand footer-brand">
+                <span class="brand-symbol"><i class="fa-solid fa-location-dot"></i></span>
+                <span>Wander<span>List.</span></span>
+            </a>
+
+            <p>For the places you'll never forget.</p>
+
+            <span class="copyright">© 2026 WanderList</span>
+        </div>
+    </footer>
+
+    <!-- Destination Image Preview -->
+    <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+        <button
+            type="button"
+            class="lightbox-close"
+            id="lightboxClose"
+            aria-label="Close image preview"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="Enlarged destination image">
+            <p id="lightboxCaption"></p>
+        </div>
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
